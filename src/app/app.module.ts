@@ -14,7 +14,8 @@ import {CurrentComponent} from './training/current/current.component';
 import {NewTrainingComponent} from './training/new-training/new-training.component';
 import {PastTrainingComponent} from './training/past-training/past-training.component';
 import {WelcomeComponent} from './welcome/welcome.component';
-import {AppRoutingModule} from './app-routing.module'; // Must be imported after BrowserModule
+import {AppRoutingModule} from './app-routing.module';
+import {FlexLayoutModule} from '@angular/flex-layout'; // Must be imported after BrowserModule
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {AppRoutingModule} from './app-routing.module'; // Must be imported after
         BrowserModule,
         BrowserAnimationsModule,
         MaterialModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FlexLayoutModule
     ],
     providers: [],
     bootstrap: [AppComponent]
