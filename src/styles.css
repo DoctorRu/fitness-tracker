@@ -3,3 +3,11 @@
  /*Check the folder angular/material/prebuilt-themes to see all avaible prebuilt themes*/
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0px;
+}

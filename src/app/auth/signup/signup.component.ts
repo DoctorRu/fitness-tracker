@@ -8,7 +8,6 @@ import {NgForm} from '@angular/forms';
 })
 
 export class SignupComponent implements OnInit {
-
     minDate;
     maxDate;
 
