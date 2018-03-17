@@ -6,8 +6,9 @@
 
 body, html {
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
 
 body {
-    margin: 0px;
+    margin: 0;
 }
