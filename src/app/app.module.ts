@@ -18,6 +18,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {HeaderComponent} from './navigation/header/header.component';
 import {SidenavListComponent} from './navigation/sidenav-list/sidenav-list.component';
 import {CurrentTrainingComponent} from './training/current-training/current-training.component';
+import {StopTrainingComponent} from './training/current-training/stop-training.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import {CurrentTrainingComponent} from './training/current-training/current-trai
         WelcomeComponent,
         HeaderComponent,
         SidenavListComponent,
-        CurrentTrainingComponent
+        CurrentTrainingComponent,
+        StopTrainingComponent
     ],
     imports: [
         BrowserModule,
@@ -40,7 +42,8 @@ import {CurrentTrainingComponent} from './training/current-training/current-trai
         FlexLayoutModule
     ],
     providers: [],
-    bootstrap: [ AppComponent ]
+    bootstrap: [ AppComponent ],
+    entryComponents: [ StopTrainingComponent ]
 })
 
 export class AppModule {
