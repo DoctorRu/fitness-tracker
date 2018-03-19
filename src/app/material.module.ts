@@ -1,5 +1,4 @@
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
 import {
     MatButtonModule,
     MatIconModule,
@@ -24,7 +23,6 @@ import {
         MatIconModule,
         MatFormFieldModule,
         MatInputModule,
-        FormsModule,
         MatDatepickerModule,
         MatNativeDateModule,
         MatCheckboxModule,
@@ -42,8 +40,8 @@ import {
         MatIconModule,
         MatFormFieldModule,
         MatInputModule,
-        FormsModule,
         MatDatepickerModule,
+        MatNativeDateModule,
         MatCheckboxModule,
         MatSidenavModule,
         MatToolbarModule,
@@ -55,6 +53,4 @@ import {
         MatDialogModule
     ]
 })
-
-export class MaterialModule {
-}
+export class MaterialModule {}
