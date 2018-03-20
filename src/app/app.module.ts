@@ -12,7 +12,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {AppRoutingModule} from './app-routing.module';
 import {SignupComponent} from './auth/signup/signup.component';
 import {LoginComponent} from './auth/login/login.component';
-import {TrainingComponent} from './auth/training/training.component';
+import {TrainingComponent} from './training/training.component';
 import {NewTrainingComponent} from './training/new-training/new-training.component';
 import {PastTrainingComponent} from './training/past-training/past-training.component';
 import {WelcomeComponent} from './welcome/welcome.component';
@@ -22,6 +22,7 @@ import {CurrentTrainingComponent} from './training/current-training/current-trai
 import {StopTrainingComponent} from './training/current-training/stop-training.component';
 
 import {AuthService} from './auth/auth-service';
+import {TrainingService} from './training/training.service';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,10 @@ import {AuthService} from './auth/auth-service';
         FormsModule,
         ReactiveFormsModule
     ],
-    providers: [ AuthService ],
+    providers: [
+        AuthService,
+        TrainingService
+    ],
     bootstrap: [ AppComponent ],
     entryComponents: [ StopTrainingComponent ]
 })
