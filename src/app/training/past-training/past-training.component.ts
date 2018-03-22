@@ -26,7 +26,7 @@ export class PastTrainingComponent implements OnInit, AfterViewInit {
     
     ngAfterViewInit() {
         this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator
+        this.dataSource.paginator = this.paginator;
     }
     
     
