@@ -4,6 +4,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+## Screenshots
+![alt tag](https://raw.githubusercontent.com/DoctorRu/fitness-tracker/master/screenshots/01.jpg)
+![alt tag](https://raw.githubusercontent.com/DoctorRu/fitness-tracker/master/screenshots/02.jpg)
+![alt tag](https://raw.githubusercontent.com/DoctorRu/fitness-tracker/master/screenshots/03.jpg)
+![alt tag](https://raw.githubusercontent.com/DoctorRu/fitness-tracker/master/screenshots/04.jpg)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -52,3 +58,5 @@ https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
         messagingSenderId: '<your-messaging-sender-id>'
       }
     };
+
+
