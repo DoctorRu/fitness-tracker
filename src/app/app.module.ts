@@ -1,5 +1,4 @@
 import 'hammerjs';
-
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -9,8 +8,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
-import { AngularFireModule } from 'angularfire2';
-import { environment } from '../environments/environment';
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+
+import {environment} from '../environments/environment';
 
 import {AppRoutingModule} from './app-routing.module';
 import {SignupComponent} from './auth/signup/signup.component';
@@ -26,7 +29,6 @@ import {StopTrainingComponent} from './training/current-training/stop-training.c
 
 import {AuthService} from './auth/auth-service';
 import {TrainingService} from './training/training.service';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
 
 @NgModule({
     declarations: [
@@ -41,7 +43,7 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
         SidenavListComponent,
         CurrentTrainingComponent,
         StopTrainingComponent,
-        
+    
     ],
     imports: [
         BrowserModule,
@@ -52,7 +54,8 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
         FormsModule,
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule
+        AngularFirestoreModule,
+        AngularFireAuthModule
     ],
     providers: [
         AuthService,
