@@ -27,7 +27,7 @@ import {SidenavListComponent} from './navigation/sidenav-list/sidenav-list.compo
 import {CurrentTrainingComponent} from './training/current-training/current-training.component';
 import {StopTrainingComponent} from './training/current-training/stop-training.component';
 
-import {AuthService} from './auth/auth-service';
+import {AuthService} from './auth/auth.service';
 import {TrainingService} from './training/training.service';
 
 @NgModule({
