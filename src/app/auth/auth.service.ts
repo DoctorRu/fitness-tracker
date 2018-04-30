@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
-import { AngularFireAuth } from 'angularfire2/auth';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
+import {Subject} from 'rxjs/Subject';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {MatSnackBar} from "@angular/material";
 
-import { User } from './user.model';
-import { AuthData } from './auth-data.model';
-import { TrainingService } from '../training/training.service';
+import {User} from './user.model';
+import {AuthData} from './auth-data.model';
+import {TrainingService} from '../training/training.service';
 
 @Injectable()
 export class AuthService {
@@ -15,19 +16,21 @@ export class AuthService {
     constructor(
         private router: Router,
         private afAuth: AngularFireAuth,
-        private trainingService: TrainingService
-    ) {}
+        private trainingService: TrainingService,
+        private snackBar: MatSnackBar
+    ) {
+    }
     
     initAuthListener() {
         this.afAuth.authState.subscribe(user => {
             if (user) {
                 this.isAuthenticated = true;
                 this.authChange.next(true);
-                this.router.navigate(['/training']);
+                this.router.navigate([ '/training' ]);
             } else {
                 this.trainingService.cancelSubscriptions();
                 this.authChange.next(false);
-                this.router.navigate(['/login']);
+                this.router.navigate([ '/login' ]);
                 this.isAuthenticated = false;
             }
         });
@@ -39,7 +42,9 @@ export class AuthService {
             .then(result => {
             })
             .catch(error => {
-                console.log(error);
+                this.snackBar.open(error.message, null, {
+                    duration: 3000
+                });
             });
     }
     
@@ -50,8 +55,9 @@ export class AuthService {
                 console.log(result);
             })
             .catch(error => {
-                console.log(error);
-            });
+                this.snackBar.open(error.message, null, {
+                    duration: 3000
+                });            });
     }
     
     logout() {
