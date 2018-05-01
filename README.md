@@ -10,6 +10,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![alt tag](https://raw.githubusercontent.com/DoctorRu/fitness-tracker/master/screenshots/03.jpg)
 ![alt tag](https://raw.githubusercontent.com/DoctorRu/fitness-tracker/master/screenshots/04.jpg)
 
+
+## Live: https://fitness-project-876cb.firebaseapp.com
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
