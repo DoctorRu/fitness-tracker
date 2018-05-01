@@ -60,3 +60,9 @@ https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
     };
 
 
+## Temas para revisão
+    loadChildren (referente a rotas)
+     ref:   app-routing.module.ts
+
+    CanLoad, CanActivate
+    ref: auth.guard.ts
