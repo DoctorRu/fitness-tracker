@@ -3,7 +3,8 @@ import {Router} from '@angular/router';
 import {Subject} from 'rxjs/Subject';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Store} from "@ngrx/store";
-import * as fromApp from '../app.reducer';
+import * as fromRoot from '../app.reducer';
+import * as UI from '../shared/ui.actions';
 
 import {AuthData} from './auth-data.model';
 import {TrainingService} from '../training/training.service';
@@ -19,7 +20,7 @@ export class AuthService {
         private afAuth: AngularFireAuth,
         private trainingService: TrainingService,
         private uiService: UIService,
-        private store: Store<{ui: fromApp.State}>) {
+        private store: Store<{ui: fromRoot.State}>) {
     }
     
     initAuthListener() {
@@ -39,33 +40,34 @@ export class AuthService {
     
     registerUser(authData: AuthData) {
         // this.uiService.loadingStateChanged.next(true);
-        this.store.dispatch({type: 'START_LOADING'}); // Does the same as the line above but using redux;
+        // this.store.dispatch({type: 'START_LOADING'}); // Does the same as the line above but using redux;
+        this.store.dispatch(new UI.StartLoading()); // Does the same as the line above but using redux;
         
         this.afAuth.auth
             .createUserWithEmailAndPassword(authData.email, authData.password)
             .then(() => {
                 // this.uiService.loadingStateChanged.next(false);
-                this.store.dispatch({type: 'STOP_LOADING'}); // Does the same as the line above but using redux;
+                this.store.dispatch(new UI.StopLoading()); // Does the same as the line above but using redux;
             })
             .catch(error => {
                 // this.uiService.loadingStateChanged.next(false);
-                this.store.dispatch({type: 'STOP_LOADING'}); // Does the same as the line above but using redux;
+                this.store.dispatch(new UI.StopLoading()); // Does the same as the line above but using redux;
                 this.uiService.showSnackBar(error.message, null, 3000);
             });
     }
     
     login(authData: AuthData) {
         // this.uiService.loadingStateChanged.next(true);
-        this.store.dispatch({type: 'START_LOADING'}); // Does the same as the line above but using redux;
+        this.store.dispatch(new UI.StartLoading()); // Does the same as the line above but using redux;
         this.afAuth.auth
             .signInWithEmailAndPassword(authData.email, authData.password)
             .then(result => {
                 // this.uiService.loadingStateChanged.next(false);
-                this.store.dispatch({type: 'STOP_LOADING'}); // Does the same as the line above but using redux;
+                this.store.dispatch(new UI.StopLoading()); // Does the same as the line above but using redux;
             })
             .catch(error => {
                 // this.uiService.loadingStateChanged.next(false);
-                this.store.dispatch({type: 'STOP_LOADING'}); // Does the same as the line above but using redux;
+                this.store.dispatch(new UI.StopLoading()); // Does the same as the line above but using redux;
                 this.uiService.showSnackBar(error.message, null, 3000);
             });
     }
